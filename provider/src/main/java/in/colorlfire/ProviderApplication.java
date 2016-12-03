@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication
 @ImportResource({"classpath:dubbo.xml"})
-public class Application {
+public class ProviderApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    SpringApplication.run(ProviderApplication.class, args);
   }
 
 }
