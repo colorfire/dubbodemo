@@ -1,5 +1,6 @@
 package in.colorlfire.service.impl;
 
+import in.colorfire.entity.User;
 import in.colorfire.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,10 @@ public class UserServiceImpl implements UserService {
 
   public String hello(String name) {
     return "hello "+name+"  this is dubbodemo1";
+  }
+
+  public User getUser(String username) {
+    return null;
   }
 
 }

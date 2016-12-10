@@ -3,6 +3,12 @@ Dubbo demo.
 - spring-boot 1.4.0
 - dubbo 2.5.3
 - zookeeper 3.4.6(option)
+- spring-security
+- spring-starter-jpa
+
+
+# 2016.12.10更新
+增加spring-security权限设置
 
 
 If you found this exception, pls to try add above command into jvm arg.

@@ -13,8 +13,8 @@
     <dubbo:registry address="multicast://224.1.61.2:9981?unicast=false" /> -->
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry address="zookeeper://192.168.199.130:2181"></dubbo:registry>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>
 
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="userService" interface="in.colorlfire.service.UserService" />
+    <dubbo:reference id="userService" interface="in.colorfire.service.UserService" />
 </beans>
