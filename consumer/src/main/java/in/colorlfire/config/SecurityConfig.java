@@ -16,32 +16,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConf extends WebSecurityConfigurerAdapter {
-  @Bean
-  public UserDetailsService userDetailsService() {
-    return new CustomUserDetailsService();
-  }
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(userDetailsService());
+    auth.userDetailsService(new CustomUserDetailsService());
   }
 
-  @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-            .authorizeRequests()
-            .antMatchers("/", "/index")
-            .permitAll()
-            .anyRequest()
-            .authenticated()
-            .and()
-            .formLogin()
-            .loginPage("/login")
-            .defaultSuccessUrl("/user-page")
-            .permitAll()
-            .and()
-            .logout()
-            .permitAll();
+    http.authorizeRequests()
+            .antMatchers("/", "/index").permitAll()
+            .anyRequest().authenticated()
+            .and().formLogin().loginPage("/login").defaultSuccessUrl("/user").permitAll()
+            .and().logout().permitAll();
   }
+
 }

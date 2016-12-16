@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
@@ -8,10 +8,10 @@
 <body>
 login
 
-<form th:action="@{/login}" method="post">
-
+<form th:action="@{/login}" th:object="${user}" method="post">
     用户名：<input type="text" name="username"/>
     密码：<input type="password" name="password"/>
+
     <button type="submit">提交</button>
 </form>
 </body>
