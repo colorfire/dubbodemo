@@ -11,3 +11,4 @@ spring:
   jpa:
     database: MYSQL
     show-sql: true
+    generate-ddl: true # 自动生成ddl表结构
