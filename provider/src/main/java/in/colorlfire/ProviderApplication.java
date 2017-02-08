@@ -21,7 +21,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EntityScan("in.colorfire")
-//@ImportResource({"classpath:dubbo.xml"})
+@ImportResource({"classpath:dubbo.xml"})
 public class ProviderApplication {
 
   private static final Logger LOG = LoggerFactory.getLogger(ProviderApplication.class);
