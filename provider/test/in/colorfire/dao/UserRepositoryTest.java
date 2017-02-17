@@ -27,7 +27,7 @@ public class UserRepositoryTest {
   UserDao userDao;
 
   @Test
-  public void findsFirstPageOfCities() {
+  public void testone() {
     userDao.save(new User("colorfire", "age", "role"));
 
     List<User> user = userDao.findByUsername("colorfire");
