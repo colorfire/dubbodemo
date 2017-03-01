@@ -31,6 +31,8 @@ public class UserController {
     return "index";
   }
 
+
+
   @RequestMapping(value = "/admin", method = RequestMethod.GET)
   @PreAuthorize("hasAnyRole('admin')")
   public String helloAdmin() {
