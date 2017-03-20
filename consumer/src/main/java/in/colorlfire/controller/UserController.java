@@ -1,5 +1,6 @@
 package in.colorlfire.controller;
 
+import in.colorfire.entity.User;
 import in.colorfire.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,13 +26,14 @@ public class UserController {
 
   @RequestMapping(value = { "", "/index" }, method = RequestMethod.GET)
   public String home(Model model) {
-    String password = userService.getUser("colorfire").getPassword();
-    LOG.info("========" +  password);
-    model.addAttribute("password", password);
+    User user = userService.getUser("colorfire");
+    if (user != null) {
+      String password = user.getPassword();
+      LOG.info("========" +  password);
+      model.addAttribute("password", password);
+    }
     return "index";
   }
-
-
 
   @RequestMapping(value = "/admin", method = RequestMethod.GET)
   @PreAuthorize("hasAnyRole('admin')")

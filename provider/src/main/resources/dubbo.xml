@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
-       default-lazy-init="false" >
+       default-lazy-init="false">
 
     <!-- 提供方应用名称信息，这个相当于起一个名字，我们dubbo管理页面比较清晰是哪个应用暴露出来的  -->
     <dubbo:application name="dubbo-provider"></dubbo:application>
@@ -19,7 +19,7 @@
     <dubbo:annotation package="in.colorfire.dubbodemo1" />  -->
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- 使用dubbo注册中心暴露服务地址
     <dubbo:registry address="multicast://224.1.61.2:9981?unicast=false" /> -->
@@ -28,5 +28,5 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181" check="false" subscribe="false" register=""></dubbo:registry>
 
     <!-- 要暴露的服务接口-->
-    <dubbo:service interface="in.colorfire.service.UserService" ref="userSerivce" />
+    <dubbo:service interface="in.colorfire.service.UserService" ref="userSerivce"/>
 </beans>
